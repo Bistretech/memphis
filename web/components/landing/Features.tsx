@@ -73,7 +73,7 @@ const ServicesSection = () => {
             transition={{ duration: 0.7, delay: 0.1 }}
             className="text-3xl md:text-4xl lg:text-5xl font-light text-white"
           >
-            Specialized expertise for discerning enterprises
+            Specialized expertise for discerning enterprises.
           </motion.h2>
         </div>
 
