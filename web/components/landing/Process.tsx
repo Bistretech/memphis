@@ -37,10 +37,10 @@ export function ProcessSection() {
   const isInView = useInView(ref, { once: true, margin: "-10%" });
 
   return (
-    <section ref={ref} className="py-24 md:py-32 bg-white relative">
+    <section ref={ref} className="py-24 md:py-32 bg-black relative">
       {/* Simple border elements */}
-      <div className="absolute top-0 left-0 w-full h-px bg-neutral-200"></div>
-      <div className="absolute bottom-0 left-0 w-full h-px bg-neutral-200"></div>
+      <div className="absolute top-0 left-0 w-full h-px bg-neutral-800"></div>
+      <div className="absolute bottom-0 left-0 w-full h-px bg-neutral-800"></div>
       
       <div className="container mx-auto px-4 lg:px-8">
         {/* Refined section header */}
@@ -49,7 +49,7 @@ export function ProcessSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7 }}
-            className="text-blue-600 uppercase tracking-widest text-sm font-medium mb-4"
+            className="text-blue-400 uppercase tracking-widest text-sm font-medium mb-4"
           >
             Our Methodology
           </motion.p>
@@ -58,7 +58,7 @@ export function ProcessSection() {
             initial={{ opacity: 0, y: 20 }}
             animate={isInView ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-3xl md:text-4xl lg:text-5xl font-light text-neutral-900 tracking-tight"
+            className="text-3xl md:text-4xl lg:text-5xl font-light text-white tracking-tight"
           >
             A structured approach to <span className="font-medium">exceptional results</span>
           </motion.h2>
@@ -77,22 +77,22 @@ export function ProcessSection() {
                 className="flex"
               >
                 <div className="mr-6">
-                  <div className="w-14 h-14 border border-neutral-200 rounded-full flex items-center justify-center">
+                  <div className="w-14 h-14 border border-neutral-800 rounded-full flex items-center justify-center">
                     <span className="font-light text-xl text-neutral-400">{step.number}</span>
                   </div>
                 </div>
                 
                 <div>
                   <div className="flex items-center mb-3">
-                    <Icon size={16} className="text-blue-600 mr-2" strokeWidth={2} />
-                    <h3 className="text-xl font-medium text-neutral-900">{step.title}</h3>
+                    <Icon size={16} className="text-blue-400 mr-2" strokeWidth={2} />
+                    <h3 className="text-xl font-medium text-white">{step.title}</h3>
                   </div>
                   
-                  <p className="text-neutral-600 leading-relaxed">{step.description}</p>
+                  <p className="text-neutral-400 leading-relaxed">{step.description}</p>
                   
                   {/* Subtle divider */}
                   {index < processSteps.length - 1 && (
-                    <div className="hidden md:block h-12 w-px bg-neutral-200 absolute ml-7 mt-6"></div>
+                    <div className="hidden md:block h-12 w-px bg-neutral-800 absolute ml-7 mt-6"></div>
                   )}
                 </div>
               </motion.div>
