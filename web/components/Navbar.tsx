@@ -67,8 +67,8 @@ export function Navbar() {
                   href={item.href}
                   className={`text-lg font-medium transition-colors duration-200 ${
                     pathname === item.href
-                      ? "text-blue-400"
-                      : "text-white hover:text-blue-400"
+                      ? "text-primary"
+                      : "text-white hover:text-primary"
                   }`}
                 >
                   {item.name}
@@ -81,7 +81,7 @@ export function Navbar() {
               <Link href="/contact">
                 <Button 
                   size="lg" 
-                  className="bg-blue-500 hover:bg-blue-600 text-white text-lg font-medium px-8 py-3 rounded-md transition-all duration-200 hover:scale-105"
+                  className="hover-lift hover-glow bg-primary text-primary-foreground text-lg font-medium px-8 py-3 rounded-md"
                 >
                   Get Started
                 </Button>
@@ -141,7 +141,7 @@ export function Navbar() {
                     onClick={() => setMobileMenuOpen(false)}
                     className={`block px-4 py-4 rounded-lg text-xl font-medium transition-colors ${
                       pathname === item.href
-                        ? "bg-blue-500/10 text-blue-400"
+                        ? "bg-primary/10 text-primary"
                         : "text-white hover:bg-white/10"
                     }`}
                   >
@@ -153,7 +153,7 @@ export function Navbar() {
               <div className="p-6 border-t border-neutral-800">
                 <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
                   <Button
-                    className="w-full bg-blue-500 hover:bg-blue-600 text-white text-xl font-medium py-4 rounded-lg"
+                    className="hover-lift hover-glow w-full bg-primary text-primary-foreground text-xl font-medium py-4 rounded-lg"
                   >
                     Get Started
                   </Button>

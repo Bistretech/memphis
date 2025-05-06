@@ -64,12 +64,12 @@ export function HeroSection() {
                         >
                             <span className="block mb-3">
                                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-gray-300">
-                                    Scale faster, smarter,
+                                 Powering Growth Through 
                                 </span>
                             </span>
                             <span className="block">
                                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-300 via-amber-200 to-amber-100">
-                                    With Memphis Capital
+                                Smart Capital and Strategy
                                 </span>
                             </span>
                         </motion.h1>

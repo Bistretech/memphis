@@ -133,7 +133,7 @@ export default function ServicesPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 pt-32 pb-20 relative z-10">
+      <section className="container mx-auto px-4 pt-40 pb-20 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -380,7 +380,7 @@ export default function ServicesPage() {
             >
               <Link
                 href="/contact"
-                className="px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white rounded-lg font-medium flex items-center justify-center gap-2 transition-all hover:shadow-lg hover:shadow-blue-500/20"
+                className="hover-lift hover-glow px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium flex items-center justify-center gap-2"
               >
                 Schedule a Consultation
                 <ArrowRight className="w-4 h-4" />
@@ -388,7 +388,7 @@ export default function ServicesPage() {
 
               <Link
                 href="/about"
-                className="px-8 py-3 bg-transparent border border-blue-500/50 hover:border-blue-400 text-white rounded-lg font-medium flex items-center justify-center gap-2 transition-all hover:bg-blue-500/10"
+                className="hover-lift card-hover px-8 py-3 bg-transparent border border-primary/50 text-foreground rounded-lg font-medium flex items-center justify-center gap-2"
               >
                 Learn About Our Team
               </Link>
