@@ -23,12 +23,12 @@ export function CTASection() {
           className="object-cover"
         />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-r from-blue-900/80 to-black/80 z-10" />
-      <div className="absolute inset-0 border border-blue-500/20 rounded-2xl z-20" />
+      <div className="absolute inset-0 bg-gradient-to-r from-background/90 to-background/80 z-10" />
+      <div className="absolute inset-0 border border-primary/20 rounded-2xl z-20" />
 
       <div className="relative px-8 py-16 text-center z-30">
         <motion.h2
-          className="text-3xl md:text-4xl font-bold mb-6 text-white"
+          className="text-3xl md:text-4xl font-bold mb-6 text-foreground"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6 }}
@@ -38,7 +38,7 @@ export function CTASection() {
         </motion.h2>
 
         <motion.p
-          className="text-lg text-blue-100/80 max-w-2xl mx-auto mb-10"
+          className="text-lg text-muted-foreground max-w-2xl mx-auto mb-10"
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.1 }}
@@ -57,7 +57,7 @@ export function CTASection() {
         >
           <Link
             href="/contact"
-            className="px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white rounded-lg font-medium flex items-center justify-center gap-2 transition-all hover:shadow-lg hover:shadow-blue-500/20"
+            className="hover-lift hover-glow px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium flex items-center justify-center gap-2"
           >
             Contact Us
             <ArrowRight className="w-4 h-4" />
@@ -65,7 +65,7 @@ export function CTASection() {
 
           <Link
             href="/services"
-            className="px-8 py-3 bg-transparent border border-blue-500/50 hover:border-blue-400 text-white rounded-lg font-medium flex items-center justify-center gap-2 transition-all hover:bg-blue-500/10"
+            className="hover-lift card-hover px-8 py-3 bg-transparent border border-primary/50 text-foreground rounded-lg font-medium flex items-center justify-center gap-2"
           >
             Explore Our Services
           </Link>

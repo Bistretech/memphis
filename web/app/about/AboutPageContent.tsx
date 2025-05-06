@@ -51,7 +51,7 @@ export default function AboutPageContent() {
         <div className="absolute top-[30%] right-[25%] w-[100px] h-[100px] border border-blue-500/10 rounded-full" />
       </div>
 
-      <div className="container mx-auto px-4 pt-24 pb-16 relative z-10">
+      <div className="container mx-auto px-4 pt-40 pb-16 relative z-10">
         <div className="max-w-5xl mx-auto">
           {/* Hero Section */}
           <motion.div
@@ -471,7 +471,7 @@ export default function AboutPageContent() {
                   transition={{ duration: 0.6, delay: 0.3 }}
                   viewport={{ once: true }}
                 >
-                  <button className="px-6 py-3 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white rounded-lg font-medium flex items-center gap-2 transition-all hover:shadow-lg hover:shadow-blue-500/20">
+                  <button className="hover-lift hover-glow px-6 py-3 bg-primary text-primary-foreground rounded-lg font-medium flex items-center gap-2 transition-all">
                     Learn More About Our Process
                     <ArrowRight className="w-4 h-4" />
                   </button>
@@ -573,7 +573,7 @@ export default function AboutPageContent() {
               >
                 <Link
                   href="/contact"
-                  className="px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-500 hover:from-blue-500 hover:to-blue-400 text-white rounded-lg font-medium flex items-center justify-center gap-2 transition-all hover:shadow-lg hover:shadow-blue-500/20"
+                  className="hover-lift hover-glow px-8 py-3 bg-primary text-primary-foreground rounded-lg font-medium flex items-center justify-center gap-2"
                 >
                   Contact Us
                   <ArrowRight className="w-4 h-4" />
@@ -581,7 +581,7 @@ export default function AboutPageContent() {
 
                 <Link
                   href="/services"
-                  className="px-8 py-3 bg-transparent border border-blue-500/50 hover:border-blue-400 text-white rounded-lg font-medium flex items-center justify-center gap-2 transition-all hover:bg-blue-500/10"
+                  className="hover-lift card-hover px-8 py-3 bg-transparent border border-primary/50 text-foreground rounded-lg font-medium flex items-center justify-center gap-2"
                 >
                   Explore Our Services
                 </Link>

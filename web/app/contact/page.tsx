@@ -15,7 +15,7 @@ export default function ContactPage() {
           className="max-w-3xl mx-auto text-center"
         >
           <h1 className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-400 to-white">
-            Get in Touch
+            Let’s Build Something Great Together
           </h1>
           <p className="text-lg text-neutral-400 leading-relaxed">
             We're here to help you with your business needs. Whether you're looking for strategic advice, 
