@@ -72,7 +72,7 @@ export function WhyMemphisSection() {
               <div className="p-1 bg-gradient-to-tr from-neutral-800 via-black to-neutral-800 rounded-lg shadow-sm">
                 <div className="aspect-[16/10] overflow-hidden rounded-lg relative">
                   <img 
-                    src="https://img.freepik.com/free-photo/front-view-stacked-coins-with-dirt-plant_23-2148803904.jpg?t=st=1745686650~exp=1745690250~hmac=7acafba80ff284cadcdfad64ad20fa8e1a19391f6b0f558063c0a4cb1ebc7b1d&w=900" 
+                    src="/front-view-stacked-coins-with-dirt-plant.jpg" 
                     alt="Strategic business meeting" 
                     className="w-full h-full object-cover"
                   />

@@ -3,20 +3,44 @@
 import { ArrowRight, ChevronDown } from "lucide-react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
+import { useState, useEffect } from "react";
 
 export function HeroSection() {
+    const [currentImage, setCurrentImage] = useState(0);
+    const images = [
+        "/beautiful-bildings-with-lights-hong-kong.jpg",
+        "/dadar-skyline-mumbai-india.jpg"
+    ];
+
+    useEffect(() => {
+        const interval = setInterval(() => {
+            setCurrentImage((prev) => (prev + 1) % images.length);
+        }, 5000); // Change image every 5 seconds
+
+        return () => clearInterval(interval);
+    }, []);
+
     return (
         <section className="relative flex items-center justify-center w-full min-h-screen bg-cover bg-center bg-no-repeat overflow-hidden pt-24 pb-10">
             {/* Premium background with overlay */}
             <div className="absolute inset-0 z-0">
-                <Image
-                    src="https://img.freepik.com/free-photo/hand-adding-coins-stack-covered-dirt-plants_23-2148803907.jpg"
-                    alt="Investment Growth"
-                    fill
-                    priority
-                    className="object-cover"
-                    sizes="100vw"
-                />
+                <motion.div
+                    key={currentImage}
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: 1 }}
+                    exit={{ opacity: 0 }}
+                    transition={{ duration: 1 }}
+                >
+                    <Image
+                        src={images[currentImage]}
+                        alt="Investment Growth"
+                        fill
+                        priority
+                        className="object-cover"
+                        sizes="100vw"
+                    />
+                </motion.div>
                 <div className="absolute inset-0 bg-gradient-to-br from-slate-900/95 via-black/85 to-blue-950/90"></div>
 
                 {/* Subtle animated glow effect */}
@@ -101,16 +125,19 @@ export function HeroSection() {
                             transition={{ delay: 0.7, duration: 0.5 }}
                         >
                             {/* Primary CTA with premium styling */}
-                            <motion.button
-                                whileHover={{ scale: 1.03 }}
-                                whileTap={{ scale: 0.98 }}
-                                className="group relative inline-flex items-center gap-3 px-8 py-4 text-base font-medium text-white bg-gradient-to-br from-blue-600 via-blue-700 to-blue-800 hover:from-blue-500 hover:to-blue-700 transition-all duration-300 rounded-md shadow-lg shadow-blue-700/30"
+                            <Link
+                                href="/contact"
+                                className="group relative inline-flex items-center gap-3 px-8 py-4 text-base font-medium text-white bg-gradient-to-br from-amber-500 via-yellow-500 to-amber-600 hover:from-amber-400 hover:to-yellow-500 transition-all duration-300 rounded-md shadow-lg shadow-amber-500/30"
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    window.location.href = '/contact';
+                                }}
                             >
                                 <span>Let's Talk</span>
                                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
-                                {/* Premium glow effect on hover */}
-                                <span className="absolute -inset-1 -z-10 rounded-md blur-lg bg-gradient-to-r from-blue-600 to-blue-500 opacity-0 group-hover:opacity-60 transition-opacity duration-500"></span>
-                            </motion.button>
+                                {/* Premium golden glow effect on hover */}
+                                <span className="absolute -inset-1 -z-10 rounded-md blur-lg bg-gradient-to-r from-amber-300 to-yellow-400 opacity-0 group-hover:opacity-60 transition-opacity duration-500"></span>
+                            </Link>
 
                         </motion.div>
 
