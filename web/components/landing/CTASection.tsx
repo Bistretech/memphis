@@ -17,8 +17,8 @@ export function CTASection() {
       {/* Background image */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/placeholder.svg?height=400&width=1200&text=Nairobi+Financial+District"
-          alt="Financial District"
+          src="/Remittance.jpg"
+          alt="remit"
           fill
           className="object-cover"
         />

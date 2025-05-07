@@ -65,7 +65,7 @@ export function Navbar() {
                 <Link
                   key={item.name}
                   href={item.href}
-                  className={`text-lg font-medium transition-colors duration-200 ${
+                  className={`text-lg font-medium transition-all duration-300 hover-scale ${
                     pathname === item.href
                       ? "text-primary"
                       : "text-white hover:text-primary"
@@ -81,7 +81,7 @@ export function Navbar() {
               <Link href="/contact">
                 <Button 
                   size="lg" 
-                  className="hover-lift hover-glow bg-primary text-primary-foreground text-lg font-medium px-8 py-3 rounded-md"
+                  className="hover-lift hover-glow hover-brightness bg-primary text-primary-foreground text-lg font-medium px-8 py-3 rounded-md"
                 >
                   Get Started
                 </Button>
@@ -139,7 +139,7 @@ export function Navbar() {
                     key={item.name}
                     href={item.href}
                     onClick={() => setMobileMenuOpen(false)}
-                    className={`block px-4 py-4 rounded-lg text-xl font-medium transition-colors ${
+                    className={`block px-4 py-4 rounded-lg text-xl font-medium transition-all duration-300 hover-scale ${
                       pathname === item.href
                         ? "bg-primary/10 text-primary"
                         : "text-white hover:bg-white/10"
@@ -153,7 +153,7 @@ export function Navbar() {
               <div className="p-6 border-t border-neutral-800">
                 <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>
                   <Button
-                    className="hover-lift hover-glow w-full bg-primary text-primary-foreground text-xl font-medium py-4 rounded-lg"
+                    className="hover-lift hover-glow hover-brightness w-full bg-primary text-primary-foreground text-xl font-medium py-4 rounded-lg"
                   >
                     Get Started
                   </Button>

@@ -1,6 +1,6 @@
 "use client"
 
-import { motion } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import {
   Lightbulb,
   Handshake,
@@ -14,6 +14,8 @@ import {
   ChevronRight,
 } from "lucide-react"
 import Link from "next/link"
+import Image from "next/image"
+import { useEffect, useState } from "react"
 
 const services = [
   {
@@ -112,7 +114,23 @@ const staggerContainer = {
   },
 }
 
+const backgroundImages = [
+  "/black-businessman-using-computer-laptop.jpg",
+  "/person-office-analyzing-checking-finance-graphs.jpg",
+  "/employee-working-marketing-setting.jpg"
+]
+
 export default function ServicesPage() {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0)
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % backgroundImages.length)
+    }, 5000) // Change image every 5 seconds
+
+    return () => clearInterval(interval)
+  }, [])
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-gradient-to-b from-black via-black to-blue-950">
       {/* Abstract background elements */}
@@ -133,7 +151,31 @@ export default function ServicesPage() {
       </div>
 
       {/* Hero Section */}
-      <section className="container mx-auto px-4 pt-40 pb-20 relative z-10">
+      <section className="container mx-auto px-4 pt-24 pb-12 relative z-10 min-h-[60vh]">
+        {/* Background Image Slideshow */}
+        <div className="absolute inset-0 -z-10">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={currentImageIndex}
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 1 }}
+              className="absolute inset-0"
+            >
+              <Image
+                src={backgroundImages[currentImageIndex]}
+                alt="Background Slide"
+                fill
+                priority
+                className="object-cover"
+                sizes="100vw"
+              />
+            </motion.div>
+          </AnimatePresence>
+          <div className="absolute inset-0 bg-gradient-to-b from-black/90 via-black/80 to-blue-950/90" />
+        </div>
+
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
@@ -144,27 +186,36 @@ export default function ServicesPage() {
             initial={{ scale: 0.9, opacity: 0 }}
             animate={{ scale: 1, opacity: 1 }}
             transition={{ duration: 0.6 }}
-            className="inline-block mb-6"
+            className="inline-block mb-4"
           >
-            <div className="relative w-20 h-20 mx-auto mb-4">
+            <div className="relative w-16 h-16 mx-auto mb-3">
               <div className="absolute inset-0 bg-blue-500/20 rounded-full blur-md" />
               <div className="relative bg-gradient-to-br from-blue-600 to-blue-400 rounded-full w-full h-full flex items-center justify-center">
-                <Handshake className="w-10 h-10 text-white" />
+                <Handshake className="w-8 h-8 text-white" />
               </div>
             </div>
           </motion.div>
 
           <motion.h1
-            className="text-4xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-400 to-white"
+            className="text-3xl md:text-4xl lg:text-4xl font-bold mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
           >
-            We provide a wide range of Services
+            <span className="block mb-2">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-white via-blue-100 to-gray-300">
+                Powering Growth Through
+              </span>
+            </span>
+            <span className="block">
+              <span className="bg-clip-text text-transparent bg-gradient-to-r from-amber-300 via-amber-200 to-amber-100">
+                Smart Capital and Strategy
+              </span>
+            </span>
           </motion.h1>
 
           <motion.h2
-            className="text-2xl md:text-3xl font-light text-white mb-8"
+            className="text-xl md:text-2xl font-light text-white/90 mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
@@ -173,7 +224,7 @@ export default function ServicesPage() {
           </motion.h2>
 
           <motion.p
-            className="text-lg text-blue-100/70 leading-relaxed"
+            className="text-base md:text-lg text-blue-100/70 leading-relaxed max-w-2xl mx-auto"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.4 }}
